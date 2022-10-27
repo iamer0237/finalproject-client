@@ -8,9 +8,7 @@
 .App {
   width: 100%;
   display: grid;
-  flex-direction: row;
   background-color: whitesmoke;
-  grid-template-columns: 1fr, 1fr, 1fr;
 }
 .AppTicker{
   background-color: red;
@@ -55,6 +53,7 @@
   flex-direction: column;
   color: whitesmoke;
   font-size: 15px;
+  border: none;
   border-radius: 20px;
   padding: 20px;
   margin: 10px;
@@ -63,6 +62,21 @@
   align-items: center;
   align-content: center;
   background-color: rgb(251, 61, 8);
+}
+.report-nice-form {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(8, 8, 251);
 }
 .category {
   color: blue;

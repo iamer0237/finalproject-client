@@ -10,7 +10,7 @@ function AllReports() {
   const [report, setReport] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/reports")
+      .get(`${process.env.REACT_APP_SERVER}/api/reports`)
       .then((response) => {
         console.log(response.data);
         setReport(response.data)

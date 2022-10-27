@@ -27,7 +27,7 @@ const CloudApp = () => {
     e.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:4000/", {
+      const result = await axios.post(process.env.REACT_APP_SERVER, {
         image: image,
       });
       const uploadedImage = result.data.url;

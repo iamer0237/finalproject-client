@@ -1,6 +1,6 @@
 export const createReport = async (formData) => {
     try {
-      const create = await fetch("http://localhost:4000/api/reports", {
+      const create = await fetch(`${process.env.REACT_APP_SERVER}/api/reports`, {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {

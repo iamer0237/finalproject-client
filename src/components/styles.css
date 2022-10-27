@@ -15,12 +15,18 @@ body{
 color: white;
 background-color: rgb(251, 61, 8);
 }
+
 .webcam-capture__content {
   display: flex;
   flex-direction: column;
   width: fit-content;
   align-items: center;
   justify-content: center;
+}
+onereport{
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
 }
 .take-photo {
   width: 10rem;

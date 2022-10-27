@@ -4,7 +4,7 @@ import "../App.css"
 
 export default function Header() {
   const displayMessage = () => {
-    return <AppBar className="Text">Make Our Community Great</AppBar>;
+    return <AppBar className="Text">Share your concerns with the community</AppBar>;
   };
   
   return (

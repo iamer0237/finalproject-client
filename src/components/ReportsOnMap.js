@@ -12,7 +12,6 @@ import { height, width } from "@mui/system";
 import "../App.css";
 
 function ReportsOnMap({ oneReport }) {
-
   const [reports, setReports] = useState([]);
   const [selectValue, setSelectValue] = useState("");
   const [allReports, setAllReports] = useState("");
@@ -25,15 +24,23 @@ function ReportsOnMap({ oneReport }) {
       (
       <Marker position={oneReport.coordinates} icon={greenicon}>
         <Popup>
-          <div>
-            <img style={{ width: "80px" }} src={oneReport.image} alt="image" />
+          <div >
+            <div>
+              <img
+                style={{ width: "220px" }}
+                src={oneReport.image}
+                alt="image"
+              />
+            </div >
             {/* {oneReport.image} */}
-            <h2>Issue: {oneReport.title}</h2>
-            <h4>Category: {oneReport.category}</h4>
-            <p>Description: {oneReport.description}</p>
-            <p>Created by:{oneReport.name}</p>
-            <p>Created on:{oneReport.createdAt}</p>
-            <p>Status:{oneReport.status}</p>
+            <div className="onereport">
+              <h2>Title: {oneReport.title}</h2>
+              <h6>Category: {oneReport.category}</h6>
+              <p>Description: {oneReport.description}</p>
+              <p>Reported by: {oneReport.name}</p>
+              <p>Created on: {oneReport.createdAt}</p>
+              {/* <p>Status:{oneReport.status}</p> */}
+            </div>
           </div>
         </Popup>
       </Marker>

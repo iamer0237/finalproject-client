@@ -39,9 +39,16 @@ const App = () => {
       <div className="AppTicker">
         <Ticker />
       </div>
-      <div className="report-form">
+      <br />
+     <div><button className="btn btn-primary" onClick={ShowReportForm}>
+          Share Your Concern
+        </button></div>
+         <div className="report-form"> {isShown && <ReportForm />}</div>
+       
+     
+      {/* <div className="report-form">
         <ReportForm />
-      </div>
+      </div> */}
 
       <div className="leaflet-container">
         <NewMap setReports={setReports} />

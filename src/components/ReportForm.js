@@ -2,7 +2,7 @@ import { createReport } from "../utils/CreateReport";
 import SelectCat from "./SelectCat";
 import CupturePhoto from "./CupturePhoto";
 import "./styles.css";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import LocationMarker from "./LocationMarker";
@@ -16,15 +16,16 @@ const ReportForm = () => {
   const [inputs, setInputs] = useState({});
   const [coordinates, setCoordinates] = useState(null);
   const [image, setImage] = useState("");
+  const ref = useRef();
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
-  useGeolocated({
+    useGeolocated({
       positionOptions: {
-          enableHighAccuracy: false,
-          geolocationProvider: navigator.geolocation,
-    isOptimisticGeolocationEnabled: true,
+        enableHighAccuracy: false,
+        geolocationProvider: navigator.geolocation,
+        isOptimisticGeolocationEnabled: true,
       },
       userDecisionTimeout: 5000,
-  });
+    });
   const handleSubmit = async (e) => {
     console.log(file);
     e.preventDefault();
@@ -37,6 +38,11 @@ const ReportForm = () => {
     } catch (err) {
       console.error(err);
     }
+
+    const reset = () => {
+      ref.current.value = "";
+    };
+    setInputs({ name: "", title: "", category: "", description: "" });
   };
   const previewFiles = (file) => {
     const reader = new FileReader();
@@ -59,6 +65,7 @@ const ReportForm = () => {
   const handleSelect = (e) => {
     setInputs((prevState) => ({ ...prevState, category: e.value }));
   };
+  console.log(inputs);
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
@@ -85,7 +92,7 @@ const ReportForm = () => {
         />
         <br />
         <label>
-          <div>Name**:</div>
+          <div>Your Name**:</div>
           <div>
             <input
               value={inputs.name}
@@ -95,8 +102,8 @@ const ReportForm = () => {
             />
           </div>
         </label>
-        <br />
-        <label>
+
+        {/* <label>
           <div>Phone:</div>
           <div>
             <input
@@ -118,12 +125,12 @@ const ReportForm = () => {
             name="email"
             onChange={handleChange}
           />
-        </label>
+        </label> */}
         <br />
         <label>
           <div>Category**:</div>
           <div>
-            <SelectCat value={inputs.cat} handleChange={handleSelect} />
+            <SelectCat value={inputs.category} handleChange={handleSelect} />
           </div>
         </label>
         <br />
@@ -148,7 +155,7 @@ const ReportForm = () => {
             onChange={handleChange}
           ></textarea>
         </label>
-        <button>Submit Report</button>
+        <button className="btn btn-primary">Submit Your Concern</button>
         <p>Fields marked with ** are required, others optional</p>
       </form>
     </>
