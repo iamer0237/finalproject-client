@@ -30,9 +30,9 @@ const App = () => {
   };
   return (
     <div className="App">
-      <div className="App-logo">
+      {/* <div className="App-logo">
         <img src={logo} alt="ibc" />
-      </div>
+      </div> */}
       <div>
         <Header />
       </div>
