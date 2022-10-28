@@ -39,10 +39,9 @@ const ReportForm = () => {
       console.error(err);
     }
 
-    const reset = () => {
-      ref.current.value = "";
-    };
+    
     setInputs({ name: "", title: "", category: "", description: "" });
+    refreshPage()
   };
   const previewFiles = (file) => {
     const reader = new FileReader();
@@ -51,7 +50,9 @@ const ReportForm = () => {
       setImage(reader.result);
     };
   };
-
+  const refreshPage = ()=>{
+    window.location.reload();
+ }
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setFile(file);
