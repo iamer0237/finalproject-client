@@ -30,9 +30,9 @@ const App = () => {
   };
   return (
     <div className="App">
-      {/* <div className="App-logo">
+      <div className="App-logo">
         <img src={logo} alt="ibc" />
-      </div> */}
+      </div> 
       <div>
         <Header />
       </div>
@@ -40,16 +40,14 @@ const App = () => {
         <Ticker />
       </div>
       <br />
-     <div><button className="btn btn-primary" onClick={ShowReportForm}>
+      {/* <div>
+        <button className="btn btn-primary" onClick={ShowReportForm}>
           Share Your Concern
-        </button></div>
-         <div className="report-form"> {isShown && <ReportForm />}</div>
-       
-     
-      {/* <div className="report-form">
-        <ReportForm />
-      </div> */}
-
+        </button>
+      </div>
+      <div className="report-form"> {isShown && <ReportForm />}</div> */}
+      
+      <div className="report-form"><ReportForm /></div>
       <div className="leaflet-container">
         <NewMap setReports={setReports} />
       </div>

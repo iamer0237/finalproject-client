@@ -42,7 +42,7 @@ const ReportForm = () => {
     const reset = () => {
       ref.current.value = "";
     };
-    // setInputs({ name: "", title: "", category: "", description: "" });
+    setInputs({ name: "", title: "", category: "", description: "" });
   };
   const previewFiles = (file) => {
     const reader = new FileReader();

@@ -9,7 +9,7 @@ export const createReport = async (formData) => {
       });
       if (!create.ok) throw new Error("Something went wrong");
       const report = await create.json();
-      console.log(report)
+        // console.log(report)
       return { report };
     } catch (error) {
       return { error };

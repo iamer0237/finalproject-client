@@ -36,7 +36,6 @@ const NewMap = ({ setReports }) => {
   function LocationMarker() {
     const [position, setPosition] = useState(null);
 
-    console.log(position);
     const [bbox, setBbox] = useState([]);
     const [selectValue, setSelectValue] = useState("");
 
