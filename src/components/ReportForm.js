@@ -1,14 +1,12 @@
 import { createReport } from "../utils/CreateReport";
 import SelectCat from "./SelectCat";
-import CupturePhoto from "./CupturePhoto";
 import "./styles.css";
-import React, { useRef, useState } from "react";
+import React, {  useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import LocationMarker from "./LocationMarker";
-import ReportOnMap from "./ReportsOnMap";
-import UploadImage from "./UploadImage";
-import NewMap from "./NewMap";
+
+
 import { useGeolocated } from "react-geolocated";
 
 const ReportForm = () => {
@@ -16,7 +14,6 @@ const ReportForm = () => {
   const [inputs, setInputs] = useState({});
   const [coordinates, setCoordinates] = useState(null);
   const [image, setImage] = useState("");
-  const ref = useRef();
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
     useGeolocated({
       positionOptions: {

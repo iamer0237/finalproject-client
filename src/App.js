@@ -6,6 +6,8 @@ import Header from "./components/Header";
 import AllReports from "./components/AllReports";
 import GetLocation from "./components/GetLocation";
 import ReportForm from "./components/ReportForm";
+import ReportTest from "./components/ReportTest";
+
 import MapTestMap from "./components/ReportsOnMap";
 import CupturePhoto from "./components/CupturePhoto";
 import Ticker from "./components/Ticker";
@@ -46,8 +48,8 @@ const App = () => {
         </button>
       </div>
       <div className="report-form"> {isShown && <ReportForm />}</div> */}
-      
-      <div className="report-form"><ReportForm /></div>
+     <div className="report-form"><ReportForm /></div> 
+
       <div className="leaflet-container">
         <NewMap setReports={setReports} />
       </div>
