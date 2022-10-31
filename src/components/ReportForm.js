@@ -39,7 +39,10 @@ const ReportForm = () => {
     
     setInputs({ name: "", title: "", category: "", description: "" });
     refreshPage()
-  };
+    window.alert("We have received your concern");
+    refreshPage()
+
+    };
   const previewFiles = (file) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -79,7 +82,8 @@ const ReportForm = () => {
           />
           <LocationMarker setMapCoordinates={setCoordinates} />
         </MapContainer>
-        <label htmlFor="fileInput"></label>
+        <br />
+        <label htmlFor="fileInput">Take a Photo</label>
         <input
           type="file"
           accept="image/*"
@@ -88,6 +92,7 @@ const ReportForm = () => {
           onChange={(e) => handleImageChange(e)}
           required
         />
+        <br />
         <br />
         <label>
           <div>Your Name**:</div>
@@ -124,20 +129,20 @@ const ReportForm = () => {
             onChange={handleChange}
           />
         </label> */}
-        <br />
+        {/* <br />
         <label>
           <div>Category**:</div>
           <div>
             <SelectCat value={inputs.category} handleChange={handleSelect} />
           </div>
-        </label>
+        </label> */}
+        <br />
         <br />
         <label>
-          <div> Title**:</div>
+          <div> Subject**:</div>
           <div>
             <input
               value={inputs.title}
-              className="input"
               name="title"
               onChange={handleChange}
             />
@@ -154,7 +159,7 @@ const ReportForm = () => {
           ></textarea>
         </label>
         <button className="btn btn-primary">Submit Your Concern</button>
-        <p>Fields marked with ** are required, others optional</p>
+        <p>Fields marked with ** are required!</p>
       </form>
     </>
   );

@@ -30,6 +30,8 @@ const App = () => {
   const ShowPhotoForm = (event) => {
     setIsShown((current) => !current);
   };
+
+
   return (
     <div className="App">
       <div className="App-logo">
@@ -53,7 +55,29 @@ const App = () => {
       <div className="leaflet-container">
         <NewMap setReports={setReports} />
       </div>
+      <button
+        onClick={() => {
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}
+        style={{
+          position: 'absulute',
+          width: "auto",
+          hight:"auto",
+          padding: '1rem 2rem',
+          border: "none",
+          fontSize: '20px',
+          bottom: '40px',
+          right: '40px',
+          backgroundColor: 'blue',
+          color: '#fff',
+          textAlign: 'center',
+        }}
+      >
+        Go to top
+      </button>
+    
     </div>
+    
   );
 };
 export default App;
