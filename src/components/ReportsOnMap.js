@@ -26,7 +26,7 @@ function ReportsOnMap({ oneReport }) {
             </div >
             <div className="onereport">
               <h2>Title: {oneReport.title}</h2>
-              <h6>Category: {oneReport.category}</h6>
+              {/* <h6>Category: {oneReport.category}</h6> */}
               <p>Description: {oneReport.description}</p>
               <p>Reported by: {oneReport.name}</p>
               <p>Created on: {oneReport.createdAt}</p>
