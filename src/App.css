@@ -30,8 +30,8 @@ footer{
 .App {
   width: 99,9%;
   display: grid;
-  background-color: white;
-  height: auto;
+  background-color: whitesmoke;
+  height: 1500px;
 }
 .AppTicker{
   width: auto;
@@ -127,16 +127,16 @@ footer{
 }
 .App-logo {
   height: auto;
-  margin-left: 30px;
+  width: 30%;
   border: 1px, solid, rgb(238, 234, 242);
   pointer-events: none;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-} */
+}
 
 body {
   margin: 0;

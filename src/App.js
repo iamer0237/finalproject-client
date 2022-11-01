@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import ReportForm from "./components/ReportForm";
 import Ticker from "./components/Ticker";
-import logo from "./ibc21.png";
+import logo from "./logo.svg";
 import "./App.css";
 import NewMap from "./components/NewMap";
 const App = () => {
@@ -30,16 +30,15 @@ const App = () => {
       <div className="AppTicker">
         <Ticker />
       </div>
-      <br />
     {/* <div>
         <button className="btn btn-primary" onClick={ShowReportForm}>
           Share Your Concern
         </button>
-      </div>
-      <div> {isShown && <div className="report-form"><ReportForm /></div>}</div>  */}
-      <div className="report-form">
+      <div> {isShown && <div className="report-form"><ReportForm /></div>}</div> </div>
+       */}
+     <div className="report-form">
         <ReportForm /> 
-      </div> 
+      </div>
 
       <div className="leaflet-container">
         <NewMap setReports={setReports} />
