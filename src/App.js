@@ -30,15 +30,16 @@ const App = () => {
       <div className="AppTicker">
         <Ticker />
       </div>
+      <br />
     {/* <div>
         <button className="btn btn-primary" onClick={ShowReportForm}>
           Share Your Concern
         </button>
-      <div> {isShown && <div className="report-form"><ReportForm /></div>}</div> </div>
-       */}
-     <div className="report-form">
-        <ReportForm /> 
       </div>
+      <div> {isShown && <div className="report-form"><ReportForm /></div>}</div>  */}
+      <div className="report-form">
+        <ReportForm /> 
+      </div> 
 
       <div className="leaflet-container">
         <NewMap setReports={setReports} />
