@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import ReportForm from "./components/ReportForm";
 import Ticker from "./components/Ticker";
-import logo from "./logo.svg";
+import logo from "./ibc21.jpg";
 import "./App.css";
 import NewMap from "./components/NewMap";
 const App = () => {
@@ -56,7 +56,7 @@ const App = () => {
           fontSize: "20px",
           bottom: "40px",
           right: "40px",
-          backgroundColor: "blue",
+          backgroundColor: "#005599",
           color: "#fff",
           textAlign: "center",
         }}

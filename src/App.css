@@ -102,7 +102,10 @@ footer{
 .category {
   color: blue;
 }
-
+.MuiAppBar-colorSecondary
+AppBar {
+  color:#63c971
+}
 .Text {
   height: fit-content;
   display: flex;
@@ -126,6 +129,9 @@ footer{
   align-content: center;
 }
 .App-logo {
+  margin:35px 0px 3px;
+  padding-bottom: 0px;
+  padding-left: 20px;
   height: auto;
   width: 25%;
   border: none;
@@ -155,7 +161,7 @@ body {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 @import url("~leaflet/dist/leaflet.css");
@@ -187,7 +193,8 @@ html, body, #map {
   display: flex !important;
   flex-direction: row !important;
   position: relative;
-  color:red;
+  color:#ffffff;
+  background-color: #005599;
   width: 200px;
   height: content;
 
