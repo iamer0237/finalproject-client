@@ -197,7 +197,6 @@ html, body, #map {
   background-color: #005599;
   width: 200px;
   height: content;
-
 }
   .marquee-container:hover div {
     animation-play-state: var(--pause-on-hover);

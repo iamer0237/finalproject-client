@@ -39,7 +39,6 @@ const App = () => {
      <div className="report-form">
         <ReportForm /> 
       </div>
-
       <div className="leaflet-container">
         <NewMap setReports={setReports} />
       </div>
