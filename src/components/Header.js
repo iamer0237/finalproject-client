@@ -10,6 +10,7 @@ export default function Header() {
       </AppBar>
     );
   };
+  
   return (
     <header>
       <div className="Text">{displayMessage()}</div>
