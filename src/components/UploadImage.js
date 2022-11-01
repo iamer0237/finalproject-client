@@ -1,7 +1,5 @@
 import react, { useState } from "react";
-import Img from "./Img";
 import axios from "axios";
-import ReportForm from "./ReportForm";
 import "../App.css";
 
 const UploadImage = () => {
@@ -9,8 +7,6 @@ const UploadImage = () => {
   const [image, setImage] = useState("");
   const [uploadedImage, setUploadedImage] = useState("");
   const [isShown, setIsShown] = useState(false);
-  const [coordinates, setCoordinates] = useState(null);
-  const [reports, setReports] = useState("");
   const ShowReportForm = (event) => {
     setIsShown((current) => !current);
   };

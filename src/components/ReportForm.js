@@ -1,14 +1,12 @@
 import { createReport } from "../utils/CreateReport";
 import SelectCat from "./SelectCat";
-import CupturePhoto from "./CupturePhoto";
 import "./styles.css";
-import React, { useRef, useState } from "react";
+import React, {  useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import LocationMarker from "./LocationMarker";
-import ReportOnMap from "./ReportsOnMap";
-import UploadImage from "./UploadImage";
-import NewMap from "./NewMap";
+
+
 import { useGeolocated } from "react-geolocated";
 
 const ReportForm = () => {
@@ -16,7 +14,6 @@ const ReportForm = () => {
   const [inputs, setInputs] = useState({});
   const [coordinates, setCoordinates] = useState(null);
   const [image, setImage] = useState("");
-  const ref = useRef();
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
     useGeolocated({
       positionOptions: {
@@ -42,7 +39,10 @@ const ReportForm = () => {
     
     setInputs({ name: "", title: "", category: "", description: "" });
     refreshPage()
-  };
+    window.alert("We have received your concern");
+    refreshPage()
+
+    };
   const previewFiles = (file) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -82,7 +82,8 @@ const ReportForm = () => {
           />
           <LocationMarker setMapCoordinates={setCoordinates} />
         </MapContainer>
-        <label htmlFor="fileInput"></label>
+        <br />
+        <label htmlFor="fileInput">Take a Photo</label>
         <input
           type="file"
           accept="image/*"
@@ -91,6 +92,7 @@ const ReportForm = () => {
           onChange={(e) => handleImageChange(e)}
           required
         />
+        <br />
         <br />
         <label>
           <div>Your Name**:</div>
@@ -127,20 +129,20 @@ const ReportForm = () => {
             onChange={handleChange}
           />
         </label> */}
-        <br />
+        {/* <br />
         <label>
           <div>Category**:</div>
           <div>
             <SelectCat value={inputs.category} handleChange={handleSelect} />
           </div>
-        </label>
+        </label> */}
+        <br />
         <br />
         <label>
-          <div> Title**:</div>
+          <div> Subject**:</div>
           <div>
             <input
               value={inputs.title}
-              className="input"
               name="title"
               onChange={handleChange}
             />
@@ -157,7 +159,7 @@ const ReportForm = () => {
           ></textarea>
         </label>
         <button className="btn btn-primary">Submit Your Concern</button>
-        <p>Fields marked with ** are required, others optional</p>
+        <p>Fields marked with ** are required!</p>
       </form>
     </>
   );

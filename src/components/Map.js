@@ -10,17 +10,16 @@ const Map = () => {
   function LocationMarker(handleLocation) {
     const [position, setPosition] = useState(null);
     const [bbox, setBbox] = useState([]);
-    console.log("position", position)
+    console.log("position", position);
 
     const map = useMap();
 
-
     useEffect(() => {
-      map.locate().on("locationfound", function (e) {
-        map.locate({setView: true, maxZoom:20});
+      map.locate({ setView: true, maxZoom: 13 }).on("locationfound", function (e) {
+        // map.locate({ setView: true, maxZoom: 13 });
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
-        const radius = e.accuracy;
+        const radius = e.accuracy / 10;
         const circle = L.circle(e.latlng, radius);
         circle.addTo(map);
         setBbox(e.bounds.toBBoxString().split(","));
@@ -29,10 +28,8 @@ const Map = () => {
 
     return position === null ? null : (
       <Marker position={position} icon={icon}>
-
         <Popup>
           Your Location <br />
-        
           <b>LNG</b>: {bbox[0]} <br />
           <b>LAT</b>: {bbox[3]}
         </Popup>
@@ -41,19 +38,17 @@ const Map = () => {
   }
   return (
     <MapContainer
-      center={[48.1951, 11.6068]}
+      center={[48.35435, 11.788517]}
       zoom={13}
       scrollWheelZoom
-      style={{ height: "70vh"}}
-      
+      style={{ height: "100vh" }}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <LocationMarker handle/>
+      <LocationMarker handle />
     </MapContainer>
-
   );
 };
 export default Map;
