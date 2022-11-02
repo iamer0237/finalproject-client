@@ -89,8 +89,9 @@ const ReportForm = () => {
           accept="image/*"
           capture
           id="fileInput"
-          onChange={(e) => handleImageChange(e)}
           required
+          onChange={(e) => handleImageChange(e)}
+          
         />
         <br />
         <br />
@@ -101,6 +102,7 @@ const ReportForm = () => {
               value={inputs.name}
               type="text"
               name="name"
+              required
               onChange={handleChange}
             />
           </div>
@@ -144,6 +146,7 @@ const ReportForm = () => {
             <input
               value={inputs.title}
               name="title"
+              required
               onChange={handleChange}
             />
           </div>
@@ -155,6 +158,7 @@ const ReportForm = () => {
             value={inputs.description}
             className="textarea"
             name="description"
+            required
             onChange={handleChange}
           ></textarea>
         </label>
