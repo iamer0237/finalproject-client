@@ -1,11 +1,10 @@
 import { createReport } from "../utils/CreateReport";
 import SelectCat from "./SelectCat";
 import "./styles.css";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import LocationMarker from "./LocationMarker";
-
 
 import { useGeolocated } from "react-geolocated";
 
@@ -36,13 +35,11 @@ const ReportForm = () => {
       console.error(err);
     }
 
-    
     setInputs({ name: "", title: "", category: "", description: "" });
-    refreshPage()
+    refreshPage();
     window.alert("We have received your concern");
-    refreshPage()
-
-    };
+    refreshPage();
+  };
   const previewFiles = (file) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -50,9 +47,9 @@ const ReportForm = () => {
       setImage(reader.result);
     };
   };
-  const refreshPage = ()=>{
+  const refreshPage = () => {
     window.location.reload();
- }
+  };
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setFile(file);
@@ -83,7 +80,7 @@ const ReportForm = () => {
           <LocationMarker setMapCoordinates={setCoordinates} />
         </MapContainer>
         <br />
-        <label htmlFor="fileInput">Take a Photo</label>
+        <label htmlFor="fileInput">Take a Photo**</label>
         <input
           type="file"
           accept="image/*"
@@ -91,7 +88,6 @@ const ReportForm = () => {
           id="fileInput"
           required
           onChange={(e) => handleImageChange(e)}
-          
         />
         <br />
         <br />

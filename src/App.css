@@ -28,8 +28,9 @@ footer{
   background-color: rgb(248, 244, 3);
 }
 .App {
+  display: grid; 
+  justify-content: center;
   width: 99,9%;
-  display: grid;
   background-color: white;
   height: 1500px;
 }
@@ -105,7 +106,7 @@ footer{
 }
 .MuiAppBar-colorSecondary
 AppBar {
-  color:#63c971
+  color:#ffffff
 }
 .Text {
   height: fit-content;
