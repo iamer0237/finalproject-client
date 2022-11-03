@@ -159,7 +159,7 @@ const ReportForm = () => {
             onChange={handleChange}
           ></textarea>
         </label>
-        <button className="btn btn-primary">Submit your Observation</button>
+        <button className="Btn">Submit</button>
         <p>Fields marked with ** are required!</p>
       </form>
     </>

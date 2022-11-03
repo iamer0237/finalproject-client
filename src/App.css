@@ -28,11 +28,13 @@ footer{
   background-color: rgb(248, 244, 3);
 }
 .App {
-  display: grid; 
+  display: flex; 
   justify-content: center;
   width: 99,9%;
   background-color: white;
   height: 1500px;
+  flex-direction: column;
+  
 }
 .AppTicker{
   width: auto;
@@ -59,8 +61,14 @@ footer{
 
 }
 .Btn {
-  background-color: #005599;
+  background-color: #FAA214;
+ border: none;
+ border-radius: 20px ;
+ width: 60px;
+ padding: 5px;
+ margin: 5px;
   color:#ffffff
+ 
 }
 .reports {
   display: grid;
@@ -84,7 +92,9 @@ footer{
   height: fit-content;
   align-items: center;
   align-content: center;
-  background-color: #005599
+  background-color: #005599;
+  align-self: center;
+  
 }
 .report-nice-form {
   cursor: pointer;
@@ -132,13 +142,12 @@ AppBar {
   align-content: center;
 }
 .App-logo {
-  margin:30px 0px 3px 30px;
-  padding-bottom: 0px;
-  padding-left: 20px;
+  padding: 35px 0;
+  padding-bottom: 15px;
   height: auto;
-  width: 25%;
   border: none;
   pointer-events: none;
+  align-self: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -243,6 +252,8 @@ html, body, #map {
     background-color: #63c971;
     color: #fff;
   }
+  
+  
 }
  
 /* For Tablet View */
