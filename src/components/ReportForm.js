@@ -80,7 +80,7 @@ const ReportForm = () => {
           <LocationMarker setMapCoordinates={setCoordinates} />
         </MapContainer>
         <br />
-        <label htmlFor="fileInput">Take a Photo**</label>
+        <label htmlFor="fileInput">Take a Photo** (Avoid human faces and vehicle number plates)</label>
         <input
           type="file"
           accept="image/*"
@@ -88,6 +88,7 @@ const ReportForm = () => {
           id="fileInput"
           required
           onChange={(e) => handleImageChange(e)}
+          
         />
         <br />
         <br />
@@ -158,7 +159,7 @@ const ReportForm = () => {
             onChange={handleChange}
           ></textarea>
         </label>
-        <button className="btn btn-primary">Submit Your Concern</button>
+        <button className="btn btn-primary">Submit your Observation</button>
         <p>Fields marked with ** are required!</p>
       </form>
     </>
