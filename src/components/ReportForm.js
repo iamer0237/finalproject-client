@@ -80,7 +80,7 @@ const ReportForm = () => {
           <LocationMarker setMapCoordinates={setCoordinates} />
         </MapContainer>
         <br />
-        <label htmlFor="fileInput">Take a Photo** (Avoid human faces and vehicle number plates)</label>
+        <label htmlFor="fileInput">Take a Photo** (Ensure no faces or vehicle number plates are visible)</label>
         <input
           type="file"
           accept="image/*"
